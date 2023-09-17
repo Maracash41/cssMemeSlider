@@ -1,0 +1,139 @@
+html, * {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #2e2e41;
+}
+
+img {
+	max-width: 100%;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.slider {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	max-width: 80%;
+}
+
+.slider__radio {
+	display: none;
+}
+
+
+.slider .slider__item {
+	opacity: 0;
+	display: none;
+}
+
+.slider__img {
+	border: 0.1rem solid gray;
+	border-radius: 2%;
+}
+
+.slider__text {
+	color: #ffffff;
+}
+
+.paginations {
+	display: flex;
+	align-self: flex-end;
+}
+
+.paginations__pagination {
+  display: inline-block;
+	margin-right: 0.8rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  transition: all 0.1s linear;
+  border: 0.1rem solid lightskyblue;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  color: #333;
+	background: transparent;
+}
+
+.paginations__pagination > span {
+	margin: -1rem;
+	display: block;
+	padding: 1.1rem;
+}
+
+.paginations__pagination:hover {
+	border-color: red;
+}
+
+.paginations__pagination:active {
+	background-color: red;
+}
+
+.slider__radio:nth-of-type(1) ~ .slider__item:nth-of-type(1) {
+	display: none;
+	opacity: 1;
+}
+
+.slider__radio:nth-of-type(1):checked ~ .slider__item:nth-of-type(1) {
+	display: block;
+	animation: hide-show 1s;
+}
+
+.slider__radio:nth-of-type(2):checked ~ .slider__item:nth-of-type(2) {
+	animation: hide-show 1s;
+	opacity: 1;
+	display: block;
+}
+
+.slider__radio:nth-of-type(3):checked  ~ .slider__item:nth-of-type(3) {
+	animation: hide-show 1s;
+	opacity: 1;
+	display: block;
+}
+
+.slider__radio:nth-of-type(4):checked  ~ .slider__item:nth-of-type(4) {
+	animation: hide-show 1s;
+	opacity: 1;
+	display: block;
+}
+
+.slider__radio:nth-of-type(1):checked ~ .paginations > .paginations__pagination:nth-of-type(1) {
+	background-color: red;
+	cursor: default;
+}
+
+.slider__radio:nth-of-type(2):checked ~  .paginations > .paginations__pagination:nth-of-type(2) {
+	background-color: red;
+	cursor: default;
+}
+
+.slider__radio:nth-of-type(3):checked  ~  .paginations > .paginations__pagination:nth-of-type(3) {
+	background-color: red;
+	cursor: default;
+}
+
+.slider__radio:nth-of-type(4):checked  ~  .paginations > .paginations__pagination:nth-of-type(4) {
+	background-color: red;
+	cursor: default;
+}
+
+@keyframes hide-show {
+	0% {
+		transform: scale(0.7);
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1.0);
+	}
+}
