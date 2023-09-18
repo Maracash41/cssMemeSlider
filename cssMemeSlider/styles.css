@@ -17,7 +17,6 @@ img {
 }
 
 .slider {
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -47,6 +46,7 @@ img {
 .paginations {
 	display: flex;
 	align-self: flex-end;
+	margin-top: -2rem;
 }
 
 .paginations__pagination {
@@ -134,5 +134,12 @@ img {
 	100% {
 		opacity: 1;
 		transform: scale(1.0);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.paginations {
+		align-self: auto;
+		margin-top: 0;
 	}
 }
